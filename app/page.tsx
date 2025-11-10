@@ -28,7 +28,7 @@ export default function Home() {
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link
-              href="/dashboard/analysis"
+              href="/dashboard/analyze"
               className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl"
             >
               Start Analysis
@@ -83,7 +83,7 @@ export default function Home() {
 
         {/* ✅ Photo Gallery Section */}
         <div className="mt-20">
-        
+      
         </div>
 
         {/* ✅ Pricing Section */}
