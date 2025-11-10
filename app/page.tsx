@@ -1,65 +1,99 @@
-import Image from "next/image";
+import Link from "next/link"
+import { Leaf, Camera, BarChart3, Shield } from "lucide-react"
+
+// ✅ Import your custom sections
+import { Navbar } from "@/components/navbar"
+import { Footer } from "@/components/footer"
+import { PricingSection } from "@/components/pricing-section"
+ //import { PhotoSection } from "@/components/photo-section"
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen flex flex-col bg-linear-to-b from-green-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors">
+      {/* ✅ Navbar at top */}
+      <Navbar />
+
+      {/* Hero Section */}
+      <main className="flex-1 container mx-auto px-4 py-16">
+        <div className="text-center max-w-4xl mx-auto mb-16">
+          <div className="flex justify-center mb-6">
+            <Leaf className="w-16 h-16 text-primary animate-float" />
+          </div>
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+            Crop Disease Detection
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+            AI-powered platform to detect and analyze crop diseases in real-time.
+            Upload images and get instant insights to protect your harvest.
           </p>
+          <div className="flex gap-4 justify-center flex-wrap">
+            <Link
+              href="/dashboard/analysis"
+              className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl"
+            >
+              Start Analysis
+            </Link>
+            <Link
+              href="/dashboard"
+              className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white px-8 py-4 rounded-lg font-semibold border-2 border-gray-200 dark:border-gray-700 transition-all"
+            >
+              View Dashboard
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Features Section */}
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-20">
+          <div className="glass p-8 rounded-2xl text-center hover:shadow-xl transition-all">
+            <div className="bg-green-100 dark:bg-green-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Camera className="w-8 h-8 text-primary" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              Image Analysis
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300">
+              Upload crop images and get instant AI-powered disease detection with high accuracy.
+            </p>
+          </div>
+
+          <div className="glass p-8 rounded-2xl text-center hover:shadow-xl transition-all">
+            <div className="bg-blue-100 dark:bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <BarChart3 className="w-8 h-8 text-accent" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              Detailed Reports
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300">
+              Get comprehensive analysis reports with treatment recommendations and insights.
+            </p>
+          </div>
+
+          <div className="glass p-8 rounded-2xl text-center hover:shadow-xl transition-all">
+            <div className="bg-purple-100 dark:bg-purple-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Shield className="w-8 h-8 text-info" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              Early Detection
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300">
+              Detect diseases early to prevent spread and minimize crop damage effectively.
+            </p>
+          </div>
+        </div>
+
+        {/* ✅ Photo Gallery Section */}
+        <div className="mt-20">
+        
+        </div>
+
+        {/* ✅ Pricing Section */}
+        <div className="mt-20">
+          <PricingSection />
         </div>
       </main>
+
+      {/* ✅ Footer */}
+      <Footer />
     </div>
-  );
+  )
 }
