@@ -1,3 +1,5 @@
+
+ "use client"
 import Link from "next/link"
 import { Leaf, Camera, BarChart3, Shield } from "lucide-react"
 
@@ -43,44 +45,114 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Features Section */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-20">
-          <div className="glass p-8 rounded-2xl text-center hover:shadow-xl transition-all">
-            <div className="bg-green-100 dark:bg-green-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Camera className="w-8 h-8 text-primary" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-              Image Analysis
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              Upload crop images and get instant AI-powered disease detection with high accuracy.
-            </p>
-          </div>
+       {/* Features Section (fade-up + stagger animation) */}
+<div
+  className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-20"
+  data-aos="fade-up"
+>
+  {/* Card 1 */}
+  <div
+    className="relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 transform-gpu hover:-translate-y-1 opacity-0 translate-y-6 animate-fadeUp delay-100"
+  >
+    <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-emerald-400 via-emerald-500 to-emerald-600" />
+    <div className="p-8 text-center space-y-4">
+      <div className="mx-auto mb-2 w-16 h-16 rounded-full flex items-center justify-center bg-emerald-50">
+        <Camera className="w-8 h-8 text-emerald-600 transition-transform duration-500 hover:scale-110" />
+      </div>
+      <h3 className="text-xl font-semibold text-gray-900 mb-2">Image Analysis</h3>
+      <p className="text-gray-600 text-sm leading-relaxed">
+        Upload crop images and get instant AI-powered disease detection with high accuracy.
+      </p>
+      <div className="mt-4 border-t w-20 mx-auto border-gray-100" />
+      <div className="mt-3">
+        <a
+          href="/dashboard/analyze"
+          className="inline-block text-sm font-semibold text-emerald-600 hover:underline"
+        >
+          Try a sample analysis →
+        </a>
+      </div>
+    </div>
+  </div>
 
-          <div className="glass p-8 rounded-2xl text-center hover:shadow-xl transition-all">
-            <div className="bg-blue-100 dark:bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <BarChart3 className="w-8 h-8 text-accent" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-              Detailed Reports
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              Get comprehensive analysis reports with treatment recommendations and insights.
-            </p>
-          </div>
+  {/* Card 2 */}
+  <div
+    className="relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 transform-gpu hover:-translate-y-1 opacity-0 translate-y-6 animate-fadeUp delay-250"
+  >
+    <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-sky-400 via-sky-500 to-indigo-500" />
+    <div className="p-8 text-center space-y-4">
+      <div className="mx-auto mb-2 w-16 h-16 rounded-full flex items-center justify-center bg-sky-50">
+        <BarChart3 className="w-8 h-8 text-sky-600 transition-transform duration-500 hover:scale-110" />
+      </div>
+      <h3 className="text-xl font-semibold text-gray-900 mb-2">Detailed Reports</h3>
+      <p className="text-gray-600 text-sm leading-relaxed">
+        Get comprehensive analysis reports with treatment recommendations and insights.
+      </p>
+      <div className="mt-4 border-t w-20 mx-auto border-gray-100" />
+      <div className="mt-3">
+        <a
+          href="/dashboard"
+          className="inline-block text-sm font-semibold text-sky-600 hover:underline"
+        >
+          View sample report →
+        </a>
+      </div>
+    </div>
+  </div>
 
-          <div className="glass p-8 rounded-2xl text-center hover:shadow-xl transition-all">
-            <div className="bg-purple-100 dark:bg-purple-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Shield className="w-8 h-8 text-info" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-              Early Detection
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              Detect diseases early to prevent spread and minimize crop damage effectively.
-            </p>
-          </div>
-        </div>
+  {/* Card 3 */}
+  <div
+    className="relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 transform-gpu hover:-translate-y-1 opacity-0 translate-y-6 animate-fadeUp delay-400"
+  >
+    <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-purple-400 via-violet-500 to-purple-600" />
+    <div className="p-8 text-center space-y-4">
+      <div className="mx-auto mb-2 w-16 h-16 rounded-full flex items-center justify-center bg-violet-50">
+        <Shield className="w-8 h-8 text-violet-600 transition-transform duration-500 hover:scale-110" />
+      </div>
+      <h3 className="text-xl font-semibold text-gray-900 mb-2">Early Detection</h3>
+      <p className="text-gray-600 text-sm leading-relaxed">
+        Detect diseases early to prevent spread and minimize crop damage effectively.
+      </p>
+      <div className="mt-4 border-t w-20 mx-auto border-gray-100" />
+      <div className="mt-3">
+        <a
+          href="/pricing"
+          className="inline-block text-sm font-semibold text-violet-600 hover:underline"
+        >
+          Learn about plans →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {/* Animation keyframes */}
+  <style jsx>{`
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fadeUp {
+      animation: fadeUp 0.8s ease-out forwards;
+    }
+    .delay-\[100ms\] {
+      animation-delay: 0.1s;
+    }
+    .delay-\[250ms\] {
+      animation-delay: 0.25s;
+    }
+    .delay-\[400ms\] {
+      animation-delay: 0.4s;
+    }
+  `}</style>
+</div>
+
+
 
         {/* secondary pricing link below features */}
        <div className="mt-24 max-w-3xl mx-auto text-center bg-linear-to-b from-green-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-2xl p-10 shadow-lg">
