@@ -62,20 +62,33 @@ export default function PricingPage() {
     <main className="min-h-screenbg-linear-to-br from-emerald-50 via-green-50 to-teal-100">
       <Navbar />
 
-      <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="absolute inset-0bg-linear-to-br from-emerald-100/40 via-transparent to-green-100/40 pointer-events-none" />
-        <div className="relative max-w-7xl mx-auto text-center space-y-6">
-          <h1 className="text-5xl sm:text-6xl font-bold text-foreground text-balance">
-            Simple,{" "}
-            <span className="text-transparent bg-clip-textbg-linear-to-r from-emerald-600 to-green-600">
-              Transparent Pricing
-            </span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Choose the perfect plan for your farming operation. All plans include a 14-day free trial.
-          </p>
-        </div>
-      </section>
+     <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+  {/* Soft gradient background */}
+  <div className="absolute inset-0 bg-linear-to-br from-emerald-100/50 via-white to-green-100/40 dark:from-emerald-900/30 dark:via-gray-900 dark:to-green-900/20 pointer-events-none" />
+
+  <div className="relative max-w-5xl mx-auto text-center space-y-8">
+    {/* Title */}
+    <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight">
+      Simple,{" "}
+      <span className="text-transparent bg-clip-text bg-linear-to-r from-emerald-600 to-green-600">
+        Transparent Pricing
+      </span>
+    </h1>
+
+    {/* Subtitle */}
+    <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+      Choose the perfect plan for your farming operation.  
+      All plans include a <span className="font-semibold text-emerald-600">14-day free trial</span> — cancel anytime.
+    </p>
+
+    {/* Decorative Divider */}
+    <div className="w-24 h-1 bg-linear-to-r from-emerald-500 to-green-500 mx-auto rounded-full shadow-sm" />
+
+    {/* CTA Button */}
+    
+  </div>
+</section>
+
 
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">

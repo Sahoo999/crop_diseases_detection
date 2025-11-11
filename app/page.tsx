@@ -4,8 +4,8 @@ import { Leaf, Camera, BarChart3, Shield } from "lucide-react"
 // ✅ Import your custom sections
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { PricingSection } from "@/components/pricing-section"
- //import { PhotoSection } from "@/components/photo-section"
+// removed: import { PricingSection } from "@/components/pricing-section"
+// import { PhotoSection } from "@/components/photo-section"
 
 export default function Home() {
   return (
@@ -39,6 +39,7 @@ export default function Home() {
             >
               View Dashboard
             </Link>
+
           </div>
         </div>
 
@@ -81,15 +82,30 @@ export default function Home() {
           </div>
         </div>
 
-        {/* ✅ Photo Gallery Section */}
+        {/* secondary pricing link below features */}
+       <div className="mt-24 max-w-3xl mx-auto text-center bg-linear-to-b from-green-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-2xl p-10 shadow-lg">
+  <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+    Find the perfect plan for your farm 🌾
+  </h2>
+  <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
+    Looking for a subscription that fits your farm size and crop variety?  
+    Choose the best plan tailored to your needs.
+  </p>
+  <Link
+    href="/pricing"
+    className="bg-linear-to-r from-green-500 to-teal-400 text-white px-10 py-4 rounded-lg font-semibold shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+  >
+    View Pricing Plans
+  </Link>
+</div>
+
+
+        {/* Photo Gallery Section (if you add later) */}
         <div className="mt-20">
-      
+          {/* leave space for PhotoSection if needed */}
         </div>
 
-        {/* ✅ Pricing Section */}
-        <div className="mt-20">
-          <PricingSection />
-        </div>
+        {/* removed PricingSection from here */}
       </main>
 
       {/* ✅ Footer */}

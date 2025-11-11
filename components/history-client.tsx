@@ -136,7 +136,7 @@ export function HistoryClient() {
           <Button variant="ghost" onClick={() => setQuery("")}>
             Clear Search
           </Button>
-          <Button variant="destructive" onClick={clearAll}>
+          <Button variant="destructive" onClick={clearAll} className="text-white hover:text-white">
             <Trash2 size={16} />
             Clear History
           </Button>
